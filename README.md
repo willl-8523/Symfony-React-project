@@ -598,20 +598,5 @@ Next, click on **Posts** from the navigation bar to view the list of posts fetch
 
 ![](https://paper-attachments.dropbox.com/s_1265725ADB054532A55C0EFD08DF0FAB2CEE8562C503298703A715DFE50C9E5D_1563647978911_post-list.png)
 
-## Conclusion
-
-Being able to structure an application that makes Ajax call to fetch contents from a remote location is one of the beauties of Single Page Applications (SPA). It improves performance of an application and also helps to make navigation between different pages very easy. 
-
-In this tutorial, you have learned how to build a single page application, using Symfony as the backend and frontend logic powered by React. This gave you an exposure to how seamless it is to combine React and Symfony.
-
-I hope you found this tutorial helpful. Feel free to go through the [source code of this application on GitHub](https://github.com/yemiwebby/symfony-react-app) and add more features as you deem fit. Looking forward to hearing about what you will build using the knowledge gained from this tutorial.
-
-
-Name: Olususi Oluyemi<br />
-Avatar: https://pbs.twimg.com/profile_images/952789235576246272/5dDs0wbK_400x400.jpg <br />
-Bio: A tech enthusiast, programming freak and a web development junkie who loves to embrace new technology.<br />
-Twitter: https://twitter.com/yemiwebby <br />
-GitHub: https://github.com/yemiwebby <br />
-Website: https://yemiwebby.com.ng/ <br />
 
 
