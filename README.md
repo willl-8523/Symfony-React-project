@@ -1,14 +1,5 @@
 # Building a single page with Symfony and React
 
-## Introduction
-
-Every modern web application built with PHP now requires a huge amount of logic handled at the frontend to enhance and provide a great user experience. PHP frameworks such as [Laravel](https://laravel.com/) come bundled with support for crafting the client side logic using [Vue.js](https://vuejs.org/). This amongst other things gives developers the ability to rapidly build applications by combining these technologies.
-
-Contrary to the structure of Laravel, [Symfony](https://symfony.com/) as a set of reusable PHP components does not favor a particular library or fronted framework over another. It gives you the flexibility to decide what runs and powers the frontend logic of your application. In this tutorial, I will show you how to seamlessly build a single page application using Symfony and React.
-
-Once we are done with this tutorial, you would have learned how to combine reusable user interface components built with [React](https://reactjs.org/) and Symfony together.
-
-
 ## Prerequisites
 
 Basic knowledge of building applications with React, Symfony and a reasonable knowledge of objected-oriented programming with PHP is advised to follow along properly and get the best results from this tutorial. 
@@ -607,20 +598,5 @@ Next, click on **Posts** from the navigation bar to view the list of posts fetch
 
 ![](https://paper-attachments.dropbox.com/s_1265725ADB054532A55C0EFD08DF0FAB2CEE8562C503298703A715DFE50C9E5D_1563647978911_post-list.png)
 
-## Conclusion
-
-Being able to structure an application that makes Ajax call to fetch contents from a remote location is one of the beauties of Single Page Applications (SPA). It improves performance of an application and also helps to make navigation between different pages very easy. 
-
-In this tutorial, you have learned how to build a single page application, using Symfony as the backend and frontend logic powered by React. This gave you an exposure to how seamless it is to combine React and Symfony.
-
-I hope you found this tutorial helpful. Feel free to go through the [source code of this application on GitHub](https://github.com/yemiwebby/symfony-react-app) and add more features as you deem fit. Looking forward to hearing about what you will build using the knowledge gained from this tutorial.
-
-
-Name: Olususi Oluyemi<br />
-Avatar: https://pbs.twimg.com/profile_images/952789235576246272/5dDs0wbK_400x400.jpg <br />
-Bio: A tech enthusiast, programming freak and a web development junkie who loves to embrace new technology.<br />
-Twitter: https://twitter.com/yemiwebby <br />
-GitHub: https://github.com/yemiwebby <br />
-Website: https://yemiwebby.com.ng/ <br />
 
 
