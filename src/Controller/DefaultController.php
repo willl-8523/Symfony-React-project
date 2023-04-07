@@ -2,9 +2,13 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\UsersRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends AbstractController
 {
@@ -20,47 +24,37 @@ class DefaultController extends AbstractController
      * @Route("/api/users", name="users", methods="GET"))
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    public function getUsers()
+    public function getUsers(UsersRepository $usersRepository/*, NormalizerInterface $normalizerInterface SerializerInterface $serializerInterface */)
     {
-        $users = [
-            [
-                'id' => 1,
-                'name' => 'Olususi Oluyemi',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
-                'imageURL' => 'https://randomuser.me/api/portraits/women/50.jpg'
-            ],
-            [
-                'id' => 2,
-                'name' => 'Camila Terry',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
-                'imageURL' => 'https://randomuser.me/api/portraits/men/42.jpg'
-            ],
-            [
-                'id' => 3,
-                'name' => 'Joel Williamson',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
-                'imageURL' => 'https://randomuser.me/api/portraits/women/67.jpg'
-            ],
-            [
-                'id' => 4,
-                'name' => 'Deann Payne',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
-                'imageURL' => 'https://randomuser.me/api/portraits/women/50.jpg'
-            ],
-            [
-                'id' => 5,
-                'name' => 'Donald Perkins',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
-                'imageURL' => 'https://randomuser.me/api/portraits/men/89.jpg'
-            ]
-        ];
+        // tableau de 4 entité user
+        $users = $usersRepository->findAll();
+        // dd($users); => 
 
-        $response = new Response();
+/*
+        // transforme le tableau de 4 entité user tableau de 4 tableaux users
+        $usersNormalize = $normalizerInterface->normalize($users);
+        // dd($usersNormalize);
 
-        $response->headers->set('Content-Type', 'application/json');
-        $response->headers->set('Access-Control-Allow-Origin', '*');
+        // transforme le tableau de 4 tableaux users en objet json
+        $json = json_encode($usersNormalize);
+        // dd($json);
 
-        $response->setContent(json_encode($users));
+        $response = new Response($json, 200, [
+            "Content-Type" => "application/json"
+        ]);
+        // dd($response);
+*/
+
+/*      
+        AUTRE METHODE AVEC SerializerInterface
+        $json = $serializerInterface->serialize($users, 'json');
+        // dd($json);
+
+        $response = new JsonResponse($json, 200, [], true);
+        dd($response);
+*/
+
+        $response = $this->json($users, 200, []);
 
         return $response;
     }

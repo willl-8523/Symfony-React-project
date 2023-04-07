@@ -6,15 +6,6 @@ const Users = () => {
     const [ loading, setLoading ] = useState(true);
 
     useEffect(() => {
-        // fetch('https://127.0.0.1:8000/api/users')
-        // .then((response) => {
-        //     return response.json();
-        // })
-        // .then((data) => {
-        //     setUsers(data);
-        //     setLoading(false);
-        // });
-
         axios.get(`https://127.0.0.1:8000/api/users`).then((response) => {
             const users = response.data;
             setUsers(users);
@@ -50,7 +41,7 @@ const Users = () => {
                                                     <div className="media-left align-self-center">
                                                         <img
                                                         className="rounded-circle"
-                                                        src={user.imageURL}
+                                                        src={user.imageUrl}
                                                         />
                                                     </div>
                                                     <div className="media-body">
